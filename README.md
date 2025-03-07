@@ -11,6 +11,11 @@ npm install bcryptjs jsonwebtoken express-validator
 npm install moment
 npm install validator
 
+**Technologies used**
+Backend - node.js
+Frontend - Angular.js
+Database - MySQL
+
 **For the frontend (angular)**
 npm install
 
@@ -47,3 +52,19 @@ Register - Fill in all the credentials
 Login either as admin or user, depending on what you selected upon registration.
 If Selected User you will be route to the booking page where you book for an appointment
 If admin you will be route to the admin dashboard and view all registered users, all booked appointments, create user
+
+**Justification for chosen approach **
+
+I chose **Node.js** for the backend and **Angular** for the frontend in the **Booking Appointment** project because of their efficiency, scalability, and real-time capabilities.  
+
+- **Node.js (Backend)**:  
+  - Handles asynchronous operations efficiently, making it ideal for real-time booking systems.  
+  - Uses **Express.js**, which is lightweight and fast for API development.  
+  - Works well with databases like MongoDB or MySQL for storing appointment data.  
+  - Supports WebSockets for instant booking updates.  
+
+- **Angular (Frontend)**:  
+  - Provides a structured, component-based UI for a smooth user experience.  
+  - Built-in **two-way data binding** ensures real-time updates.  
+  - Offers **dependency injection** for better maintainability.  
+  - Works seamlessly with APIs for dynamic booking management.  
