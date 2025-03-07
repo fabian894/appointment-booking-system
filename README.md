@@ -15,6 +15,7 @@ npm install validator
 Backend - node.js
 Frontend - Angular.js
 Database - MySQL
+other tools - PrimeNG
 
 **For the frontend (angular)**
 npm install
