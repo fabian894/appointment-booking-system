@@ -67,4 +67,19 @@ I chose **Node.js** for the backend and **Angular** for the frontend in the **Bo
   - Provides a structured, component-based UI for a smooth user experience.  
   - Built-in **two-way data binding** ensures real-time updates.  
   - Offers **dependency injection** for better maintainability.  
-  - Works seamlessly with APIs for dynamic booking management.  
+  - Works seamlessly with APIs for dynamic booking management.
+ 
+  Conflict-Handling Logic in the Book Appointment Project
+In the Book Appointment project, conflicts arise when multiple users try to book the same time slot. To handle this, i use the following logic:
+
+Backend Validation (Node.js + Express.js):
+
+Before confirming a booking, we check the database to see if the slot is already taken.
+If unavailable, the user gets an error message; otherwise, the booking is saved.
+This ensures no double-booking.
+Frontend Handling (Angular):
+
+The booking form disables unavailable slots in real-time using API calls.
+Angular’s Reactive Forms provide instant feedback if a user selects a taken slot.
+**New Angular Way of Creating a Standalone Project**
+Since Angular 14+, projects no longer require app.module.ts. Instead, Angular now supports standalone components. 
