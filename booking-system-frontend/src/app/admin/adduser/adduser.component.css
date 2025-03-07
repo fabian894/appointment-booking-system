@@ -1,0 +1,75 @@
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.w-full {
+    width: 100%;
+}
+
+
+.field {
+    margin-bottom: 24px; 
+}
+
+
+.p-error {
+    color: #d9534f;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.custom-card {
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #f5f7fa, #e1e9f1);
+    padding: 30px;
+}
+
+input, .p-password input {
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+input:focus, .p-password input:focus {
+    border-color: #007bff; 
+    outline: none;
+}
+
+p-button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+p-button:disabled {
+    background-color: #d6d6d6;
+    cursor: not-allowed;
+}
+
+p-button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .custom-card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .field {
+        margin-bottom: 16px;
+    }
+}

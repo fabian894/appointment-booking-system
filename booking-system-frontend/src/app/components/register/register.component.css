@@ -1,0 +1,8 @@
+.background-container {
+    background-image: url('/src/assets/images/appointment-image.jpg'); /* Make sure the path is correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  

@@ -1,0 +1,47 @@
+<div class="flex justify-content-center align-items-center min-h-screen">
+    <p-card header="Create a User" [style]="{width: '400px'}" class="custom-card">
+        <hr class="separator" />
+        <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+            <div class="field">
+                <label for="fullName">Full Name</label>
+                <input pInputText class="w-full" formControlName="fullName" />
+            </div>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input pInputText class="w-full" formControlName="email" />
+                <small *ngIf="email.invalid && (email.dirty || email.touched)" class="block p-error">
+                    <ng-container *ngIf="email.hasError('required')">Email is required</ng-container>
+                    <ng-container *ngIf="email.hasError('pattern')">Email is invalid</ng-container>
+                </small>
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <p-password formControlName="password" [feedback]="false" [toggleMask]="true" inputId="password" inputStyleClass="w-full" styleClass="w-full"></p-password>
+                <small *ngIf="password.invalid && (password.dirty || password.touched)" class="block p-error">Password is required</small>
+            </div>
+
+            <div class="field">
+                <label for="confirmPassword">Confirm Password</label>
+                <p-password formControlName="confirmPassword" [feedback]="false" [toggleMask]="true" inputId="confirmPassword" inputStyleClass="w-full" styleClass="w-full"></p-password>
+                <small *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="block p-error">Confirm Password is required</small>
+                <small *ngIf="addUserForm.hasError('passwordMismatch') && password.valid && confirmPassword.valid" class="block p-error">Password mismatch</small>
+            </div>
+
+            <div class="field">
+                <label for="role">Role</label>
+                <p-select 
+                  [options]="roles" 
+                  formControlName="role" 
+                  optionLabel="label" 
+                  placeholder="Select Role" 
+                  class="w-full md:w-56"
+                  (onChange)="onRoleChange($event)">
+                </p-select>
+            </div>
+
+            <p-button type="submit" label="Add User" styleClass="w-full" [disabled]="addUserForm.invalid"></p-button>
+        </form>
+    </p-card>
+</div>

@@ -1,0 +1,33 @@
+.container{
+    background-color: #203354;
+    height: 100vh;
+    color: #AAA;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container h2{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #AAA;
+}
+
+.container ul li{
+    list-style: none;
+    margin: 40px;
+
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.container ul li:hover{
+    color: #ffff
+}
+
+.icon{
+    font-size: 25px;
+    margin-right: 20px;
+}
