@@ -41,6 +41,8 @@ export class RegisterComponent {
     { label: 'Admin', value: 'admin' },
   ];
 
+  imagePath: string = ""
+
   registerForm = new FormGroup(
     {
       fullName: new FormControl('', [Validators.required]),

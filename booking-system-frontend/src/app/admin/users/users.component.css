@@ -1,32 +1,10 @@
-.dashboard-container {
-    margin: 20px;
-}
-
-.charts {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 30px;
-}
-
-.pie, .line {
-    height: 300px;
-    width: 400px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
+.background-container {
+    background: url('/images/dashboard-image.jpg') no-repeat center center;
+    background-size: cover;
     justify-content: center;
-    font-weight: bold;
-    background: #f9f9f9;
-}
-
-.requests {
-    display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 30px;
-}
+  }
+  
 
 .newuser, .booking {
     background: #ffffff;

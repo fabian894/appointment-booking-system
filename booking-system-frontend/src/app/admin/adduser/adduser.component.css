@@ -1,4 +1,14 @@
 
+.background-container {
+    background: url('/images/appointment-image2.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
 .flex {
     display: flex;
     justify-content: center;
