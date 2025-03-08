@@ -15,6 +15,7 @@ npm install validator
 Backend - node.js
 Frontend - Angular.js
 Database - MySQL
+other tools - PrimeNG
 
 **For the frontend (angular)**
 npm install
@@ -83,3 +84,6 @@ The booking form disables unavailable slots in real-time using API calls.
 Angular’s Reactive Forms provide instant feedback if a user selects a taken slot.
 **New Angular Way of Creating a Standalone Project**
 Since Angular 14+, projects no longer require app.module.ts. Instead, Angular now supports standalone components. 
+
+**Screenshots**
+i have also attached screenshots as requested
