@@ -12,5 +12,5 @@ import { ToastModule } from 'primeng/toast';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'booking-system-frontend';
+  title = 'appointment-booking-system';
 }
