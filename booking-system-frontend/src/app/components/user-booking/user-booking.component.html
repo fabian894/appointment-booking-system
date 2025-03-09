@@ -1,31 +1,48 @@
 <div class="background-container">
-<div class="flex justify-content-center align-items-center min-h-screen">
+  <div class="flex justify-content-center align-items-center min-h-screen">
     <p-card header="Book Appointment" [style]="{ width: '360px' }">
       <form [formGroup]="BookingForm" (ngSubmit)="onbookingAppointment()">
         <div class="field">
           <label for="date">Date</label>
-          <p-datepicker formControlName="date" class="w-full" id="date" formControlName="date" 
-          placeholder="select a date"  />
-          <small 
-            *ngIf="date?.invalid && (date?.dirty || date?.touched)" 
-            class="block p-error" 
-            style="color: red; font-weight: bold;">
-            <ng-container *ngIf="date?.hasError('required')"> pick a date</ng-container>
+          <p-datepicker
+            formControlName="date"
+            class="w-full"
+            id="date"
+            formControlName="date"
+            placeholder="select a date"
+            [minDate]="minDate"
+            [maxDate]="maxDate"
+            (onSelect)="onDateChange()"
+          />
+          <small
+            *ngIf="date?.invalid && (date?.dirty || date?.touched)"
+            class="block p-error"
+            style="color: red; font-weight: bold"
+          >
+            <ng-container *ngIf="date?.hasError('required')">
+              pick a date</ng-container
+            >
           </small>
         </div>
-  
+
         <div class="field">
-            <label for="timeSlot">Time Slot</label>
-            <input pInputText class="w-full" is="timeSlot" formControlName="timeSlot" />
-          </div>
-  
-        <p-button 
-          label="SUMBIT" 
-          styleClass="w-full" 
-          [disabled]="BookingForm.invalid" 
-          type="submit">
+          <label for="timeSlot">Available Time Slot</label>
+          <p-select
+            [options]="availableTimeSlots"
+            formControlName="timeSlot"
+            placeholder="Select a time slot"
+            class="w-full"
+          >
+          </p-select>
+        </div>
+
+        <p-button
+          label="SUMBIT"
+          styleClass="w-full"
+          [disabled]="BookingForm.invalid"
+          type="submit"
+        >
         </p-button>
-  
       </form>
     </p-card>
   </div>

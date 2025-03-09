@@ -219,6 +219,54 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get available timeslot",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQxNTA0MTU5LCJleHAiOjE3NDE1MDc3NTl9.TMS4RhWbhfGm_GF3__qlDsGL6CIMuJdvvJ9JOgM9kW0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"date\": \"2025-03-06\"  \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/booking/available-slots?date=2024-03-08",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"booking",
+						"available-slots"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-03-08"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

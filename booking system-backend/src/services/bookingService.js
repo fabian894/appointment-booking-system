@@ -5,16 +5,16 @@ const isValidTimeSlot = (timeSlot) => {
     const validTimeSlots = [
         '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
         '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30',
-        '16:00', '16:30'
+        '16:00', '16:30', '17:00'
     ];
     return validTimeSlots.includes(timeSlot);
 };
 
 const isValidBookingDate = (date) => {
-    const currentDate = moment().startOf('day'); // Ensure today starts at 00:00
-    const selectedDate = moment(date, 'YYYY-MM-DD').startOf('day'); // Force local timezone
+    const currentDate = moment().startOf('day'); 
+    const selectedDate = moment(date, 'YYYY-MM-DD').startOf('day'); 
 
-    console.log(`Selected Date: ${selectedDate.format('YYYY-MM-DD')}, Weekday: ${selectedDate.isoWeekday()}`); // Debugging
+    console.log(`Selected Date: ${selectedDate.format('YYYY-MM-DD')}, Weekday: ${selectedDate.isoWeekday()}`); 
 
     if (selectedDate.month() !== currentDate.month()) {
         return { error: 'Bookings can only be made for the current month.' };
@@ -69,5 +69,35 @@ const getAllBookings = async () => {
     }
 };
 
+const getAvailableTimeSlots = async (date) => {
+    try {
+        const validDate = isValidBookingDate(date);
+        if (validDate.error) {
+            return { error: validDate.error };
+        }
 
-module.exports = { bookAppointment, getAllBookings, isValidBookingDate };
+        const allTimeSlots = [
+            '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+            '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30',
+            '16:00', '16:30', '17:00'
+        ];
+
+        const [bookedSlots] = await db.query(
+            'SELECT time_slot FROM bookings WHERE date = ?',
+            [date]
+        );
+
+        const bookedTimes = bookedSlots.map(slot => slot.time_slot);
+
+        const availableSlots = allTimeSlots.filter(slot => !bookedTimes.includes(slot));
+
+        return { availableSlots };
+    } catch (err) {
+        console.error(err);
+        return { error: 'Database error' };
+    }
+};
+
+
+
+module.exports = { bookAppointment, getAllBookings, isValidBookingDate, getAvailableTimeSlots };
