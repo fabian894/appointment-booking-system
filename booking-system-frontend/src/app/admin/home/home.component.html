@@ -35,6 +35,7 @@
           <th>Name</th>
           <th>Email</th>
           <th>Date</th>
+          <th>Day</th>
           <th>Time Slot</th>
         </tr>
       </ng-template>
@@ -43,6 +44,7 @@
           <td>{{ booking.name }}</td>
           <td>{{ booking.email }}</td>
           <td>{{ booking.date | date: 'yyyy-MM-dd' }}</td>
+          <td>{{ booking.day }}</td>
           <td>{{ booking.time_slot }}</td>
         </tr>
       </ng-template>
