@@ -15,7 +15,8 @@ npm install validator
 Backend - node.js
 Frontend - Angular.js
 Database - MySQL
-other tools - PrimeNG
+other tools - PrimeNG, FontAwesome
+IDE - Visual Studio Code
 
 **For the frontend (angular)**
 npm install
@@ -36,8 +37,8 @@ JWT_SECRET=e8941220793ef43bf6b5d83f56cd4f47ca4e0790b61a2174cc6663aa194b23da7bb61
 ## Run the backend project using
 node server.js
 
-## Run the backend project using
-ng serve
+## Run the frontend project using
+ng serve OR ng serve --open
 
 ## Database Dump Script
 i have attached my database script. Open and paste it on your sql workbench, and execute it. It will create the tables 
