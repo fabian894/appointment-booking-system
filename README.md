@@ -55,7 +55,7 @@ Login either as admin or user, depending on what you selected upon registration.
 If Selected User you will be route to the booking page where you book for an appointment
 If admin you will be route to the admin dashboard and view all registered users, all booked appointments, create user if necessary
 
-## please note that you must be a registered member to be able to book an appointment as a user, or access the booking records and user records as an admin role-based authorization has been implemented and you will be authenticated using the Jwt Token upon login
+## please note that you must be a registered member to be able to book an appointment as a user, or access the booking records and user records as an admin. Role-based authorization has been implemented and you will be authenticated using the Jwt Token upon login
 
 **Justification for chosen approach **
 
