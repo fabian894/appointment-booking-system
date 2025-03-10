@@ -1,6 +1,10 @@
 <div class="background-container">
   <div class="flex justify-content-center align-items-center min-h-screen">
     <p-card header="Book Appointment" [style]="{ width: '360px' }">
+      <div class="logout-container">
+        <i class="pi pi-power-off logout-icon" (click)="onLogout()">logout</i>
+      </div>
+
       <form [formGroup]="BookingForm" (ngSubmit)="onbookingAppointment()">
         <div class="field">
           <label for="date">Date</label>
@@ -8,7 +12,6 @@
             formControlName="date"
             class="w-full"
             id="date"
-            formControlName="date"
             placeholder="select a date"
             [minDate]="minDate"
             [maxDate]="maxDate"
@@ -37,7 +40,7 @@
         </div>
 
         <p-button
-          label="SUMBIT"
+          label="SUBMIT"
           styleClass="w-full"
           [disabled]="BookingForm.invalid"
           type="submit"

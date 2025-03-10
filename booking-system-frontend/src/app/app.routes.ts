@@ -3,6 +3,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { UserBookingComponent } from './components/user-booking/user-booking.component';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     {
@@ -15,14 +16,17 @@ export const routes: Routes = [
     },
     {
         path: 'user-booking',
-        component: UserBookingComponent
+        component: UserBookingComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: '', redirectTo: 'login', pathMatch: 'full'
     },
     {
         path: 'admin-dashboard',
-        loadChildren: () => import('./admin/admin.routes').then(m => m.ADMIN_ROUTES)
+        loadChildren: () => import('./admin/admin.routes').then(m => m.ADMIN_ROUTES), 
+        canActivate: [AuthGuard] 
     },
-    { path: '**', redirectTo: '' }
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    { path: '**', redirectTo: 'login', pathMatch: 'full' }
 ];

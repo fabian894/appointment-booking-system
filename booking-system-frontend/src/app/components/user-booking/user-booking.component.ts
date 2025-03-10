@@ -129,6 +129,10 @@ export class UserBookingComponent {
     });
   }
 
+  onLogout() {
+    this.router.navigate(['/login']);
+  }  
+
   onDateChange() {
     const selectedDate = this.BookingForm.value.date;
 

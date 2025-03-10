@@ -46,47 +46,6 @@ export class LoginComponent {
     return this.loginForm.get('password');
   }
 
-
-
-  // onLogin() {
-  //   if (!this.loginForm.value.email || !this.loginForm.value.password) {
-  //     this.messageService.add({ severity: 'error', summary: 'Error', detail: 'All fields are required' });
-  //     return;
-  //   }
-  
-  //   const userData = {
-  //     email: this.loginForm.value.email,
-  //     password: this.loginForm.value.password,
-  //   };
-  
-  //   this.authService.login(userData).subscribe({
-  //     next: (res) => {
-  //       this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Login successful!' });
-  
-  //       localStorage.setItem('token', res.token);
-
-  //       const decodedToken: any = jwtDecode(res.token);
-  //       const userRole = decodedToken.role; 
-  
-  //       if (userRole === 'admin') {
-  //         this.router.navigate(['/admin-dashboard']);
-  //       } else {
-  //         this.router.navigate(['/user-booking']);
-  //       }
-  //     },
-  //     error: (err) => {
-  //       if (err.error?.errors) {
-  //         const messages = err.error.errors.map((e: any) => e.msg).join(', ');
-  //         this.messageService.add({ severity: 'error', summary: 'Validation Error', detail: messages });
-  //       } else if (err.error?.message) {
-  //         this.messageService.add({ severity: 'error', summary: 'Error', detail: err.error.message });
-  //       } else {
-  //         this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Login failed' });
-  //       }
-  //     }
-  //   });
-  // }
-
   onLogin() {
     if (!this.loginForm.value.email || !this.loginForm.value.password) {
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'All fields are required' });
@@ -102,17 +61,16 @@ export class LoginComponent {
       next: (res) => {
         this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Login successful!' });
   
-        localStorage.setItem('token', res.token);  // Store the token
+        localStorage.setItem('token', res.token); 
   
         const decodedToken: any = jwtDecode(res.token);
         console.log(decodedToken);
         const userRole = decodedToken.role;
-        const userName = decodedToken.name || 'Guest';  // Extract the user's name from the decoded token
+        const userName = decodedToken.name || 'Guest';  
   
-        // Save the user data in localStorage
         localStorage.setItem('user', JSON.stringify({
           name: userName,
-          email: this.loginForm.value.email,  // Optionally store email as well
+          email: this.loginForm.value.email,  
         }));
   
         if (userRole === 'admin') {

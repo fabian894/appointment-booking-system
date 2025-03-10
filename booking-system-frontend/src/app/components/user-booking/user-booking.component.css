@@ -7,3 +7,20 @@
     align-items: center;
   }
   
+  .logout-container {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .logout-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: red;
+    transition: color 0.3s;
+  }
+  
+  .logout-icon:hover {
+    color: darkred;
+  }
+  
