@@ -15,7 +15,8 @@ npm install validator
 Backend - node.js
 Frontend - Angular.js
 Database - MySQL
-other tools - PrimeNG
+other tools - PrimeNG, FontAwesome
+IDE - Visual Studio Code
 
 **For the frontend (angular)**
 npm install
@@ -36,8 +37,8 @@ JWT_SECRET=e8941220793ef43bf6b5d83f56cd4f47ca4e0790b61a2174cc6663aa194b23da7bb61
 ## Run the backend project using
 node server.js
 
-## Run the backend project using
-ng serve
+## Run the frontend project using
+ng serve OR ng serve --open
 
 ## Database Dump Script
 i have attached my database script. Open and paste it on your sql workbench, and execute it. It will create the tables 
@@ -54,7 +55,7 @@ Login either as admin or user, depending on what you selected upon registration.
 If Selected User you will be route to the booking page where you book for an appointment
 If admin you will be route to the admin dashboard and view all registered users, all booked appointments, create user if necessary
 
-## please note that you must be a registered member to be able to book an appointment as a user or access the booking and user records as admin as this is role-based and you will be authenticated upon login
+## please note that you must be a registered member to be able to book an appointment as a user, or access the booking records and user records as an admin role-based authorization has been implemented and you will be authenticated using the Jwt Token upon login
 
 **Justification for chosen approach **
 
