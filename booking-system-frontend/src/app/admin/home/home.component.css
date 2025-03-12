@@ -2,6 +2,20 @@
     margin: 20px;
 }
 
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.welcome-text {
+    color: #203354;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
 .charts {
     display: flex;
     align-items: center;

@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private apiUrl = 'http://localhost:5000/api/auth'; 
+  getToken(): string | null {
+    return localStorage.getItem('token'); 
+  }
 
   constructor(private http: HttpClient) {}
 
@@ -29,9 +33,17 @@ export class AuthService {
       return this.http.get(`${this.apiUrl}/users`, { headers });
     }
 
-    getLoggedInUserName(): string {
-      const user = JSON.parse(localStorage.getItem('user') || '{}');
-      console.log(localStorage.getItem('user'));
-      return user.name || 'Guest'; 
+    getUserName(): string {
+      const token = this.getToken();
+      if (token) {
+        try {
+          const decodedToken: any = jwtDecode(token);
+          return decodedToken.name || 'User'; 
+        } catch (error) {
+          console.error('Invalid token:', error);
+          return 'User';
+        }
+      }
+      return 'User';
     }
 }

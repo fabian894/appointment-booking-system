@@ -21,11 +21,14 @@ export class HomeComponent {
   users: any[] = [];
   loading: boolean = true;
   errorMessage: string = '';
-  constructor(private bookingService: BookingService, private authService: AuthService,) {}
+  userName: string | undefined;
+
+  constructor(private bookingService: BookingService, private authService: AuthService) {}
 
   ngOnInit() {
     this.fetchBookings();
     this.fetchUsers();
+    this.userName = this.authService.getUserName();
   }
   // linechart = new Chart({
   //   chart: {

@@ -64,7 +64,7 @@ export class LoginComponent {
         localStorage.setItem('token', res.token); 
   
         const decodedToken: any = jwtDecode(res.token);
-        console.log(decodedToken);
+        console.log("Decoded Token:", decodedToken);
         const userRole = decodedToken.role;
         const userName = decodedToken.name || 'Guest';  
   

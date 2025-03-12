@@ -35,12 +35,18 @@ export class UserBookingComponent {
   availableTimeSlots: string[] | undefined;
   minDate: Date;
   maxDate: Date;
+  userName: string | undefined;
+
+  ngOnInit() {
+    this.userName = this.authService.getUserName();
+  }
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private messageService: MessageService,
-    private bookingService: BookingService
+    private bookingService: BookingService,
+    private authService: AuthService
   ) {
     this.BookingForm = this.fb.group({
       date: ['', [Validators.required]],

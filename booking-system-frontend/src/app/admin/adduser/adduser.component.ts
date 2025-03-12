@@ -24,49 +24,6 @@ import { AuthService } from '../../services/auth.service';
     SelectModule,
     CommonModule,
   ],})
-// export class AdduserComponent {
-//   addUserForm: FormGroup;
-//   roles = [
-//     { label: 'Admin', value: 'admin' },
-//     { label: 'User', value: 'user' },
-//     { label: 'Manager', value: 'manager' }
-//   ];
-
-//   constructor(private fb: FormBuilder, private messageService: MessageService) {
-//     this.addUserForm = this.fb.group({
-//       fullName: ['', Validators.required],
-//       email: ['', [Validators.required, Validators.email]],
-//       password: ['', Validators.required],
-//       confirmPassword: ['', Validators.required],
-//       role: [null, Validators.required]
-//     }, { validators: this.passwordsMatchValidator });
-//   }
-
-//   onRoleChange(event: any) {
-//     this.addUserForm.patchValue({ role: event.value });
-//   }
-
-//   get email() { return this.addUserForm.get('email'); }
-//   get password() { return this.addUserForm.get('password'); }
-//   get confirmPassword() { return this.addUserForm.get('confirmPassword'); }
-
-//   passwordsMatchValidator(form: FormGroup) {
-//     return form.get('password')?.value === form.get('confirmPassword')?.value ? null : { passwordMismatch: true };
-//   }
-
-//   onSubmit() {
-//     if (this.addUserForm.invalid) return;
-
-//     console.log('User Added:', this.addUserForm.value);
-    
-//     // Show success message
-//     this.messageService.add({ severity: 'success', summary: 'Success', detail: 'User Added Successfully' });
-
-//     // Reset form after submission
-//     this.addUserForm.reset();
-//   }
-// }
-
 
 export class AdduserComponent {
   roles = [
