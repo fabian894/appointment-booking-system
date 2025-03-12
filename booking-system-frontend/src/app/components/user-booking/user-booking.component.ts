@@ -136,6 +136,8 @@ export class UserBookingComponent {
   }
 
   onLogout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
     this.router.navigate(['/login']);
   }  
 
